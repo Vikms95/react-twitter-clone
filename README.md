@@ -28,6 +28,8 @@
   - Twitter Logo / Home
     - Get all the activity from your followed accounts
 
+  - Dark/ Light mode toggle
+
   - Explore button
     - Get the trending content from the Twitter API and display it on the feed
       :(maybe sort it by how aligned it is from your preferences?)
@@ -71,16 +73,34 @@ npm start
 
 ## Notes / Room for improvement 
 
-I do have some planning when I start my projects. I think like it helps me with not knowing how to start which is usually a problem for us.
-So I usually do something like this:
--Create the app boilerplate 
+- Component hierarchy idea
+  - App
+    (isSignedIn)
+      ? SignInContainer
+        - SignInBanner
+        - SignInForm
+          - SignInModalForm
+      : FeedContainer
+        -LeftPane (feedPane things that have in common)
+          - Home
+          - ToggleTheme
+          - Explore
+          - Notifications
+          - Profile
+        -MiddlePane (feedPane things that have in common)
+          - CreateTweet
+          - FeedColumn
+        -RightPane (feedPane things that have in common)
+          - Search
+          - Messages
+
 -Create the notes.md file that you mention and jot down the following:
-     -App functionalities(this is usually the ones that TOP requirements mention)
-     -General idea of the hierarchy of components and which methods/state will every component have
-     -How will these Components communicate between each other
+     <!-- -App functionalities(this is usually the ones that TOP requirements mention) -->
+     <!-- -General idea of the hierarchy of components and which methods/state will every component have -->
+     <!-- -How will these Components communicate between each other -->
      -Later I do create a TODO section where I will proceduraly create a todo check-list to know what to do next
--Then I try to get a general idea of how the UI will look, I use this webpage to create the view.png file that you mentioned: https://excalidraw.com/
-With that you can download your drawing and include it in your project, so you have the project UI structure at all times right there.
+<!-- -Then I try to get a general idea of how the UI will look, I use this webpage to create the view.png file that you mentioned: https://excalidraw.com/ -->
+<!-- With that you can download your drawing and include it in your project, so you have the project UI structure at all times right there. -->
 -Then I start creating my Components in code and start filling out the functions and state that will populate that component. This is very basic and general, I just define the functions but I do not include any code within them, instead I do what's mentioned on the next step.
 -When I'm done with defining the functions, I grab every single one and start pseudocoding the logic that will follow within the function body
 function doCoolStuff(coolPar){
@@ -93,4 +113,6 @@ function doCoolStuff(coolPar){
      //Yell at the user for not being cool
 }
 
-And from here on, it usually all comes down automatically 😄 
+TODO
+- Create base components
+- Find what things in common do panes have so you can use composition
