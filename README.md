@@ -76,18 +76,18 @@ npm start
 - Component hierarchy idea
   - App
     (isSignedIn)
-      ? SignInContainer
+      ? SignInView
         - SignInBanner
         - SignInForm
           - SignInModalForm
-      : FeedContainer
-        -LeftPane (feedPane things that have in common)
+      : Feed
+        -FeedNavbar (feedPane things that have in common)
           - Home
           - ToggleTheme
           - Explore
           - Notifications
           - Profile
-        -MiddlePane (feedPane things that have in common)
+        -FeedContent (feedPane things that have in common)
           - CreateTweet
           - FeedColumn
         -RightPane (feedPane things that have in common)
@@ -114,5 +114,8 @@ function doCoolStuff(coolPar){
 }
 
 TODO
-- Create base components
+<!-- - Create base components -->
+- Setup sign-in skeleton
 - Find what things in common do panes have so you can use composition
+-NOTES-
+In feed, all is static besides the FeedPane, so make the Feed side content static and the middle pane so it takes the props.children content?
