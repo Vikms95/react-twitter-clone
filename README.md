@@ -1,46 +1,96 @@
-# Getting Started with Create React App
+# PROJECT NAME
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 👉 [LIVE PREVIEW](vikms95.github.io/react-wheres-waldo/) 👈
 
-## Available Scripts
+![alt text](src/assets/Waldo-showcase.gif "screenshot of memory card gameplay")
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Functionalities
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Create, customize and delete your own account
+  - Create
+    - Insert name, email and password and store that data to Firebase
+  - Have your lists of followed accounts and receive any actions from them in your feed + receive notifications
+  - Store a list of preferences per account based on the tags of each tweet the user
+    has interacted with
 
-### `npm test`
+- Top
+  - Create Tweet button
+    - Ability to write a Tweet, add a picture or other media, and display it to everyone who is following you
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Search button
+    - Search for accounts
+    - Search for tweets based on keywords
 
-### `npm run build`
+- Left Sidebar
+  - Twitter Logo / Home
+    - Get all the activity from your followed accounts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - Explore button
+    - Get the trending content from the Twitter API and display it on the feed
+      :(maybe sort it by how aligned it is from your preferences?)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Notifications
+    - See all the activity related to you: mentions, liked posts ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Profile button
+    - Watch your profile as other users would see it
 
-### `npm run eject`
+- Right Sidebar
+  - Search button
+    - Search users and tweets based on keywords
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  - Chat
+    - Have a lists of the users you are following and open a chat window where you can share any type of media private to the users of the chat
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+git clone https://github.com/Vikms95/react-twitter-clone.git
+cd react-twitter-clone
+npm install
+npm start
+```
 
-## Learn More
+## Technologies used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. React
+2. react-router
+3. Typescript
+4. styled-components
+5. ESLint
+6. Jest/TL
+7. Firebase
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Objectives
+
+## What I've learnt with this project / Challenges I faced 
+
+## Notes / Room for improvement 
+
+I do have some planning when I start my projects. I think like it helps me with not knowing how to start which is usually a problem for us.
+So I usually do something like this:
+-Create the app boilerplate 
+-Create the notes.md file that you mention and jot down the following:
+     -App functionalities(this is usually the ones that TOP requirements mention)
+     -General idea of the hierarchy of components and which methods/state will every component have
+     -How will these Components communicate between each other
+     -Later I do create a TODO section where I will proceduraly create a todo check-list to know what to do next
+-Then I try to get a general idea of how the UI will look, I use this webpage to create the view.png file that you mentioned: https://excalidraw.com/
+With that you can download your drawing and include it in your project, so you have the project UI structure at all times right there.
+-Then I start creating my Components in code and start filling out the functions and state that will populate that component. This is very basic and general, I just define the functions but I do not include any code within them, instead I do what's mentioned on the next step.
+-When I'm done with defining the functions, I grab every single one and start pseudocoding the logic that will follow within the function body
+function doCoolStuff(coolPar){
+  //Declare cool variable
+  //Declare cool array
+  //Push cool variable within cool array
+  //If cool array length is bigger than 32390232
+     //Return from this function
+  //Else
+     //Yell at the user for not being cool
+}
+
+And from here on, it usually all comes down automatically 😄 
