@@ -10,7 +10,7 @@ function App() {
 		<div className='App'>
 			<HashRouter>
 				<Routes>
-					<Route path='/sign-in' element={<SignInView />}></Route>
+					<Route path='/' element={<SignInView />}></Route>
 					<Route path='/feed' element={<Feed />}></Route>
 				</Routes>
 			</HashRouter>
