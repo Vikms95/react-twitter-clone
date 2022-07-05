@@ -10,6 +10,7 @@ body,
   padding: 0;
   height: 100%;
   font-family: Helvetica, sans-serif;
+  /* color: rgba(255, 245, 245, 0.663); */
 }
 a{
   text-decoration: none;

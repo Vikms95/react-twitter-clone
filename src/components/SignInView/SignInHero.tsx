@@ -157,6 +157,7 @@ export default function SignInHero(props: any) {
 					<span style={spanBlueStyle}>Privacy Policy</span>, including{' '}
 					<span style={spanBlueStyle}>Cookie Use.</span>
 				</SignInTerms>
+
 				<ButtonsContainer>
 					<HeroSmallHeader> Already have an account? </HeroSmallHeader>
 					<LoginButton>Sign in</LoginButton>
