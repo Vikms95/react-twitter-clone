@@ -5,6 +5,7 @@ import Button from '../Button/Button';
 import logoSmall from '../../assets/logo-blue-small.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
+import { signIn, signOutUser } from '../../utils/setupDatabase';
 
 const SignInHeroContainer = styled.section`
 	display: flex;
@@ -124,7 +125,7 @@ export default function SignInHero(props: any) {
 
 			{/* THIS IS WHERE FUNCTIONALITY HAPPENS */}
 			<ButtonsContainer>
-				<SignInButton>
+				<SignInButton handleClick={signIn}>
 					<StyledFAIcon icon={faGoogle}></StyledFAIcon>
 					Sign up with Google{' '}
 				</SignInButton>
@@ -135,7 +136,7 @@ export default function SignInHero(props: any) {
 				<ButtonSeparator>
 					<span style={spanBlackStyle}>or</span>
 				</ButtonSeparator>
-				<EmailButton> Sign-up with email </EmailButton>
+				<EmailButton> Sign up as demo </EmailButton>
 				<SignInTerms>
 					By signing up, you agree to the{' '}
 					<span style={spanBlueStyle}>Terms of Service</span> and{' '}

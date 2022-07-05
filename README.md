@@ -120,4 +120,5 @@ TODO
 - Find what things in common do panes have so you can use composition
 
 -NOTES-
+What determines which screen is shown is solely isUserSignedIn (google)
 In feed, all is static besides the FeedPane, so make the Feed side content static and the middle pane so it takes the props.children content?
