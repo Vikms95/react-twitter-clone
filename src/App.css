@@ -1,0 +1,17 @@
+*{
+  outline: 1px solid lime;
+}
+
+html,
+body,
+#root,
+.App{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+a,
+button{
+  cursor: pointer;
+}

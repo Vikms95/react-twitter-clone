@@ -1,13 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../Button/Button';
 import Container from '../Container/Container';
-import SignInBanner from './SignInBanner';
 import SignInHero from './SignInHero';
+
+import banner from '../../assets/banner.png';
 
 const SignInContainer = styled(Container)`
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(501px, 1fr));
+	min-height: 100%;
+
+	@media (max-width: 1000px) {
+		&:nth-child(1) {
+			min-height: 200vh;
+		}
+	}
+`;
+
+const SignInBanner = styled.section`
+	background-image: url(${banner});
+  
+  @media (max-width: 1000px) {
+    grid-row: 2;   
 `;
 
 export default function SignInView() {
