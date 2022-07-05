@@ -11,20 +11,27 @@ const SignInHeroContainer = styled.section`
 	flex-direction: column;
 `;
 
-const SignInLogoSmall = styled.img`
-	width: 4.9rem;
+const HeroLogoSmall = styled.img`
+	width: 4.5rem;
 `;
 
-const SignInHeroHeader = styled.h1`
-	font-size: 4.5em;
+const HeroHeader = styled.h1`
+	margin: 3rem 0 1rem 0;
+	font-size: 4em;
 	line-height: 1.2em;
 `;
 
-const SignInHeroSubHeader = styled.h2`
-	font-size: 2.5em;
+const HeroSubHeader = styled.h2`
+	font-size: 2em;
 `;
 
-const SignInButtonsContainer = styled.article`
+const HeroSmallHeader = styled(HeroSubHeader)`
+	font-size: 1.4em;
+	margin-top: 1.6em;
+	margin-bottom: 0.15em;
+`;
+
+const ButtonsContainer = styled.article`
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -35,6 +42,7 @@ const SignInButton = styled(Button)`
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+	max-width: 25rem;
 	font-weight: 900;
 	font-size: 1.25em;
 	padding: 0.5em 4em;
@@ -48,18 +56,28 @@ const SignInButton = styled(Button)`
 	}
 `;
 
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-	font-size: 1.4em;
+const EmailButton = styled(SignInButton)`
+	background: rgb(29, 155, 240);
+	color: white;
+	margin-bottom: -1em;
+
+	&:hover {
+		background: rgb(26, 140, 216);
+	}
 `;
 
-const SignInLogInButton = styled(SignInButton)`
+const LoginButton = styled(SignInButton)`
 	color: rgb(29, 155, 240);
+`;
+
+const StyledFAIcon = styled(FontAwesomeIcon)`
+	font-size: 1.4em;
 `;
 
 const ButtonSeparator = styled.h3`
 	color: antiquewhite;
-	width: 70%;
-	margin: 0.7em auto;
+	width: min(25rem, 70%);
+	margin: 0 auto;
 	overflow: hidden;
 	text-align: center;
 
@@ -82,16 +100,10 @@ const ButtonSeparator = styled.h3`
 	}
 `;
 
-const SignInEmailButton = styled(SignInButton)`
-	background: rgb(29, 155, 240);
-	color: white;
-	&:hover {
-		background: rgb(26, 140, 216);
-	}
-`;
-
 const SignInTerms = styled.p`
 	color: grey;
+	max-width: 25rem;
+	font-size: 0.9em;
 `;
 
 const spanBlueStyle = {
@@ -106,34 +118,35 @@ export default function SignInHero(props: any) {
 	const { className } = props;
 	return (
 		<SignInHeroContainer className={className}>
-			<SignInLogoSmall src={logoSmall}></SignInLogoSmall>
-			<SignInHeroHeader>Happening now</SignInHeroHeader>
-			<SignInHeroSubHeader>Join twitter today.</SignInHeroSubHeader>
+			<HeroLogoSmall src={logoSmall}></HeroLogoSmall>
+			<HeroHeader>Happening now</HeroHeader>
+			<HeroSubHeader>Join twitter today.</HeroSubHeader>
+
 			{/* THIS IS WHERE FUNCTIONALITY HAPPENS */}
-			<SignInButtonsContainer>
+			<ButtonsContainer>
 				<SignInButton>
-					<StyledFontAwesomeIcon icon={faGoogle}></StyledFontAwesomeIcon>
-					Sign-up with Google{' '}
+					<StyledFAIcon icon={faGoogle}></StyledFAIcon>
+					Sign up with Google{' '}
 				</SignInButton>
 				<SignInButton>
-					<StyledFontAwesomeIcon icon={faApple}></StyledFontAwesomeIcon>
-					Sign-up with Apple{' '}
+					<StyledFAIcon icon={faApple}></StyledFAIcon>
+					Sign up with Apple{' '}
 				</SignInButton>
 				<ButtonSeparator>
 					<span style={spanBlackStyle}>or</span>
 				</ButtonSeparator>
-				<SignInEmailButton> Sign-up with email </SignInEmailButton>
+				<EmailButton> Sign-up with email </EmailButton>
 				<SignInTerms>
 					By signing up, you agree to the{' '}
 					<span style={spanBlueStyle}>Terms of Service</span> and{' '}
 					<span style={spanBlueStyle}>Privacy Policy</span>, including{' '}
 					<span style={spanBlueStyle}>Cookie Use.</span>
 				</SignInTerms>
-				<SignInButtonsContainer>
-					<SignInHeroSubHeader> Already have an account? </SignInHeroSubHeader>
-					<SignInLogInButton>Sign-in</SignInLogInButton>
-				</SignInButtonsContainer>
-			</SignInButtonsContainer>
+				<ButtonsContainer>
+					<HeroSmallHeader> Already have an account? </HeroSmallHeader>
+					<LoginButton>Sign in</LoginButton>
+				</ButtonsContainer>
+			</ButtonsContainer>
 			{/* -------- */}
 		</SignInHeroContainer>
 	);

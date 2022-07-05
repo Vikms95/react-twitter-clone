@@ -25,6 +25,8 @@ const SignInBanner = styled.section`
 `;
 
 const StyledSignInHero = styled(SignInHero)`
+	display: flex;
+	align-items: flex-start;
 	padding: 3.2em;
 `;
 
