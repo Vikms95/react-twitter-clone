@@ -115,7 +115,9 @@ function doCoolStuff(coolPar){
 
 TODO
 <!-- - Create base components -->
-- Setup sign-in skeleton
+<!-- - Setup sign-in skeleton -->
+- Make sign in tablet and laptop responsive 1:1
 - Find what things in common do panes have so you can use composition
+
 -NOTES-
 In feed, all is static besides the FeedPane, so make the Feed side content static and the middle pane so it takes the props.children content?
