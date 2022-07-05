@@ -24,11 +24,15 @@ const SignInBanner = styled.section`
     grid-row: 2;   
 `;
 
+const StyledSignInHero = styled(SignInHero)`
+	padding: 3.2em;
+`;
+
 export default function SignInView() {
 	return (
 		<SignInContainer>
 			<SignInBanner></SignInBanner>
-			<SignInHero></SignInHero>
+			<StyledSignInHero></StyledSignInHero>
 		</SignInContainer>
 	);
 }

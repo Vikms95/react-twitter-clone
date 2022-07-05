@@ -1,6 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
+import logoSmall from '../../assets/logo-blue-small.png';
+
+const SignInHeroContainer = styled.section`
+	display: flex;
+	flex-direction: column;
+`;
+
+const SignInLogoSmall = styled.img`
+	width: 4.9rem;
+`;
 
 const SignInButton = styled(Button)`
 	font-weight: 900;
@@ -15,7 +25,7 @@ const SignInButton = styled(Button)`
 	}
 `;
 
-const LogInButton = styled(SignInButton)`
+const SignInLogInButton = styled(SignInButton)`
 	color: rgb(29, 155, 240);
 `;
 
@@ -27,19 +37,26 @@ const SignInPhoneButton = styled(SignInButton)`
 	}
 `;
 
-const HeaderSignInHero = styled.h1`
-	font-size: ;
+const SignInHeroHeader = styled.h1`
+	font-size: 4.5em;
+	line-height: 1.2em;
 `;
 
-export default function SignInHero() {
+const SignInHeroSubHeader = styled.h2`
+	font-size: 2.5em;
+`;
+
+export default function SignInHero(props: any) {
+	const { className } = props;
 	return (
-		<section>
-			<HeaderSignInHero>Happening now.</HeaderSignInHero>
-			<p>Join twitter today.</p>
+		<SignInHeroContainer className={className}>
+			<SignInLogoSmall src={logoSmall}></SignInLogoSmall>
+			<SignInHeroHeader>Happening now</SignInHeroHeader>
+			<SignInHeroSubHeader>Join twitter today.</SignInHeroSubHeader>
 			<SignInButton> Register with Google </SignInButton>
 			<SignInButton> Register with Apple </SignInButton>
 			<SignInPhoneButton>Register with your telephone number</SignInPhoneButton>
-			<LogInButton>Sign-in</LogInButton>
-		</section>
+			<SignInLogInButton>Sign-in</SignInLogInButton>
+		</SignInHeroContainer>
 	);
 }
