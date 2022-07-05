@@ -6,6 +6,7 @@ import logoSmall from '../../assets/logo-blue-small.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import { signIn, signOutUser } from '../../utils/setupDatabase';
+import { useNavigate } from 'react-router-dom';
 
 const SignInHeroContainer = styled.section`
 	display: flex;
@@ -57,10 +58,11 @@ const SignInButton = styled(Button)`
 	}
 `;
 
-const EmailButton = styled(SignInButton)`
+const DemoButton = styled(SignInButton)`
 	background: rgb(29, 155, 240);
 	color: white;
 	margin-bottom: -1em;
+	max-width: 25rem;
 
 	&:hover {
 		background: rgb(26, 140, 216);
@@ -117,6 +119,13 @@ const spanBlackStyle = {
 
 export default function SignInHero(props: any) {
 	const { className } = props;
+
+	const navigate = useNavigate();
+
+	const redirectUserOnSignIn = (url: string) => {
+		navigate(url);
+	};
+
 	return (
 		<SignInHeroContainer className={className}>
 			<HeroLogoSmall src={logoSmall}></HeroLogoSmall>
@@ -136,7 +145,12 @@ export default function SignInHero(props: any) {
 				<ButtonSeparator>
 					<span style={spanBlackStyle}>or</span>
 				</ButtonSeparator>
-				<EmailButton> Sign up as demo </EmailButton>
+
+				<DemoButton handleClick={() => redirectUserOnSignIn('/feed')}>
+					{' '}
+					Signup as demo{' '}
+				</DemoButton>
+
 				<SignInTerms>
 					By signing up, you agree to the{' '}
 					<span style={spanBlueStyle}>Terms of Service</span> and{' '}

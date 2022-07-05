@@ -11,6 +11,9 @@ body,
   height: 100%;
   font-family: Helvetica, sans-serif;
 }
+a{
+  text-decoration: none;
+}
 
 a,
 button{

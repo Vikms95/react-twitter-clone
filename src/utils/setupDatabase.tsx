@@ -115,4 +115,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export { signIn, signOutUser };
+export { signIn, signOutUser, isUserSignedIn, initFirebaseAuth, getUserName };
