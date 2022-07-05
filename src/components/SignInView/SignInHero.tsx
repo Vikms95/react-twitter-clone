@@ -24,6 +24,12 @@ const SignInHeroSubHeader = styled.h2`
 	font-size: 2.5em;
 `;
 
+const SignInButtonsContainer = styled.article`
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+`;
+
 const SignInButton = styled(Button)`
 	display: flex;
 	justify-content: center;
@@ -50,13 +56,51 @@ const SignInLogInButton = styled(SignInButton)`
 	color: rgb(29, 155, 240);
 `;
 
-const SignInPhoneButton = styled(SignInButton)`
+const ButtonSeparator = styled.h3`
+	color: antiquewhite;
+	width: 70%;
+	margin: 0.7em auto;
+	overflow: hidden;
+	text-align: center;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 91%;
+		vertical-align: middle;
+		border-bottom: 1px solid;
+		margin: 0 0.5em 0 -55%;
+	}
+
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 45%;
+		vertical-align: middle;
+		border-bottom: 1px solid;
+		margin: 0 0.55% 0 0.5em;
+	}
+`;
+
+const SignInEmailButton = styled(SignInButton)`
 	background: rgb(29, 155, 240);
 	color: white;
 	&:hover {
 		background: rgb(26, 140, 216);
 	}
 `;
+
+const SignInTerms = styled.p`
+	color: grey;
+`;
+
+const spanBlueStyle = {
+	color: 'rgb(29, 155, 240)',
+};
+
+const spanBlackStyle = {
+	color: 'black',
+};
 
 export default function SignInHero(props: any) {
 	const { className } = props;
@@ -65,16 +109,32 @@ export default function SignInHero(props: any) {
 			<SignInLogoSmall src={logoSmall}></SignInLogoSmall>
 			<SignInHeroHeader>Happening now</SignInHeroHeader>
 			<SignInHeroSubHeader>Join twitter today.</SignInHeroSubHeader>
-			<SignInButton>
-				<StyledFontAwesomeIcon icon={faGoogle}></StyledFontAwesomeIcon>
-				Sign-up with Google{' '}
-			</SignInButton>
-			<SignInButton>
-				<StyledFontAwesomeIcon icon={faApple}></StyledFontAwesomeIcon>
-				Sign-up with Apple{' '}
-			</SignInButton>
-			<SignInPhoneButton> Sign-up with phone or email </SignInPhoneButton>
-			<SignInLogInButton>Sign-in</SignInLogInButton>
+			{/* THIS IS WHERE FUNCTIONALITY HAPPENS */}
+			<SignInButtonsContainer>
+				<SignInButton>
+					<StyledFontAwesomeIcon icon={faGoogle}></StyledFontAwesomeIcon>
+					Sign-up with Google{' '}
+				</SignInButton>
+				<SignInButton>
+					<StyledFontAwesomeIcon icon={faApple}></StyledFontAwesomeIcon>
+					Sign-up with Apple{' '}
+				</SignInButton>
+				<ButtonSeparator>
+					<span style={spanBlackStyle}>or</span>
+				</ButtonSeparator>
+				<SignInEmailButton> Sign-up with email </SignInEmailButton>
+				<SignInTerms>
+					By signing up, you agree to the{' '}
+					<span style={spanBlueStyle}>Terms of Service</span> and{' '}
+					<span style={spanBlueStyle}>Privacy Policy</span>, including{' '}
+					<span style={spanBlueStyle}>Cookie Use.</span>
+				</SignInTerms>
+				<SignInButtonsContainer>
+					<SignInHeroSubHeader> Already have an account? </SignInHeroSubHeader>
+					<SignInLogInButton>Sign-in</SignInLogInButton>
+				</SignInButtonsContainer>
+			</SignInButtonsContainer>
+			{/* -------- */}
 		</SignInHeroContainer>
 	);
 }
